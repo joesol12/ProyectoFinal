@@ -1,0 +1,110 @@
+﻿<resources>
+    <string name="app_name">ProyectoFinal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Menu Principal-->
+    <string name="camara">Cámara</string>
+    <string name="galeria">Galería</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- InicioLogin -->
+    <string name="autenticarse">Seleccione un Método de Autentificación</string>
+    <string name="autenticarse_Correo">Correo</string>
+    <string name="autenticarse_Google">Google</string>
+    <string name="autenticarse_Mensaje">Teléfono</string>
+
+    <!-- Imagenes Inicio -->
+    <string name="img_logo">Icono Logo</string>
+    <string name="img_google">Icono Google</string>
+    <string name="img_telefono">Icono Teléfono</string>
+    <string name="img_correo">Icono Correo</string>
+    <string name="NecesarioAutenticarse">Es Necesario Autenticarse</string>
+
+    //Aplicacion Base
+    <string name="loading">Conectando...</string>
+
+    //Correo/Contraseñas
+    <string name="label_emailpassword">Autenticación Correo/Contraseña</string>
+    <string name="desc_emailpassword">Usar un correo y contraseña para autenticarse con Firebase.</string>
+
+    <string name="correo_contrasena_status_fmt">Correo: %1$s (verificado: %2$b)</string>
+    <string name="correo_contrasena_title_text">Correo y Contraseña</string>
+
+    <string name="desconectar">Desconectarse</string>
+    <string name="conectarse">Conectarse</string>
+    <string name="registrarse">Registrarse</string>
+
+    <string name="hint_email">Correo</string>
+    <string name="hint_password">Contraseña</string>
+
+    <string name="signed_in">Conectado</string>
+    <string name="signed_out">Desconectado</string>
+
+    <string name="auth_failed">Falló la Autenticación</string>
+    <string name="firebase_status_fmt">Usuario de Firebase: %s</string>
+
+    <string name="creandoCuenta">Creando cuenta:</string>
+    <string name="usuarioAutenticadoOk">Usuario: autenticado OK!</string>
+    <string name="usuarioCreadoOk">Usuario: Creado OK!</string>
+    <string name="falloCreacion">Error de creación</string>
+    <string name="conectandoUsuario">Conectando usuario:</string>
+    <string name="correoEnviado">Correo electrónico enviado a:</string>
+    <string name="falloCorreoEnviado">Error al enviar correo</string>
+    <string name="P_CampoObligatorio">Campo Obligatorio</string>
+
+    //Google
+    <string name="google_title_text">Autenticar con Google</string>
+    <string name="sign_out">Desconectar</string>
+    <string name="revoke">Revocar</string>
+    <string name="label_google_sign_in">Autenticación Firebase + Google</string>
+    <string name="desc_google_sign_in">Se utiliza la cta de Google para autenticarse.</string>
+    <string name="google_status_fmt">Usuario Google: %s</string>
+    <string name="errorGooglePlayServices">Error de Google Play Services.</string>
+    <string name="autenticacionCompletada">Autenticación completada:</string>
+    <string name="autenticacionFallida">Error de autenticación</string>
+    <string name="autenticado">¡Autenticado!</string>
+    <string name="autenticadoGoogle">Autenticado con Google: OK!</string>
+    <string name="autenticandoseGoogle">Autenticación con Google:</string>
+
+    //Telefono
+    <string name="phone_title_text">Autenticación por Teléfono</string>
+    <string name="hint_phone_number">Número de teléfono</string>
+    <string name="hint_verification_code">Código verificación</string>
+    <string name="start_phone_auth">Enviar</string>
+    <string name="verify_phone_auth">Verificar</string>
+    <string name="resend_phone_auth">Reenviar</string>
+    <string name="Secompletalaautenticacion">Se completa la autentificación</string>
+    <string name="Faltalaautentificacion">Falta la autenticación...</string>
+    <string name="numeroInvalido">Invalid number!</string>
+    <string name="noSePuedeEnviarMsg">No puedes enviar más mensajes</string>
+    <string name="codigoEnviado">Código enviado:</string>
+    <string name="codigoInvalido">¡Código inválido!</string>
+    <string name="status_sign_in_failed">Sign-in failed</string>
+    <string name="instant_validation">(instant validation)</string>
+    <string name="numeroInvalidos">¡Número invalido!</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_google">Autenticación Google</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="verify_email">Verify Email</string>
+
+
+</resources>
