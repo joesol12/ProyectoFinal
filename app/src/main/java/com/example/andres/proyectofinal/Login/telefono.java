@@ -138,7 +138,7 @@ public class telefono extends ActivityBase implements View.OnClickListener {
         };
     }
 
-    // Se valida si estÃ¡ auntenticado
+    // Se valida si esta auntenticado
     @Override
     public void onStart() {
         super.onStart();
@@ -181,7 +181,7 @@ public class telefono extends ActivityBase implements View.OnClickListener {
         signInWithPhoneAuthCredential(credential);
     }
 
-    //reenviar un cÃ³digo (OJO ES DIFERENTE)
+    //reenviar un codigo (OJO ES DIFERENTE)
     private void resendVerificationCode(String phoneNumber,
                                         PhoneAuthProvider.ForceResendingToken token) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(

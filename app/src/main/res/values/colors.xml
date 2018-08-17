@@ -11,4 +11,8 @@
     <color name="colorLoginOscuro">#949696</color>
 
     <color name="Base">#eb4d25</color>
+    <color name="subtitle">#999999</color>
+    <color name="title">#000000</color>
+
+    <color name="TextoBotón">#ffffff</color>
 </resources>
