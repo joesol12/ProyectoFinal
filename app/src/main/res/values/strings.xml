@@ -9,7 +9,8 @@
 
     <!--Menu Principal-->
     <string name="camara">Cámara</string>
-    <string name="galeria">Galería</string>
+    <string name="gps">GPS</string>
+    <string name="lugares">Lugares</string>
     <string name="ajustes">Ajustes</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="title_activity_login">Sign in</string>
@@ -121,5 +122,26 @@
     <string name="noGuardoCliente">El cliente no se pudo guardar</string>
     <string name="EliminarCliente">Error al eliminar correctamente el cliente</string>
     <string name="P_CampoInvalido">Campo Inválido</string>
+    <string name="title_activity_gps">Map</string>
+
+    //Camara y GPS
+    <string name="tvArchivo">Seleccione la Foto</string>
+    <string name="etArchivo">foto.jpg</string>
+    <string name="btnGuardar">Guardar</string>
+    <string name="btnDescarga">Descargar</string>
+    <string name="btnBuscar">Buscar</string>
+    <string name="btnCamara">Camara</string>
+
+    <string name="tvId">Id:</string>
+    <string name="tvNombre">Nombre:</string>
+    <string name="tvTipo">Tipo:</string>
+    <string name="tvUbicación">Ubicación:</string>
+    <string name="tvLatitud">Latitud</string>
+    <string name="tvLongitud">Longitud</string>
+    <string name="tvZoom">Zoom</string>
+    <string name="tvComent">Comentarios:</string>
+    <string name="tvPuntos">Evaluación Personal:</string>
+    <string name="btRegistra">Registrar</string>
+    <string name="btConsultar">Consultar</string>
 
 </resources>

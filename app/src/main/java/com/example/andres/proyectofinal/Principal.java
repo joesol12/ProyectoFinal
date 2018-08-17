@@ -1,11 +1,16 @@
 package com.example.andres.proyectofinal;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,10 +24,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.andres.proyectofinal.Adapter.ClienteAdapter;
+import com.example.andres.proyectofinal.Camara.Camara;
 import com.example.andres.proyectofinal.Cliente.Cliente;
 import com.example.andres.proyectofinal.Cliente.Referencias;
 import com.example.andres.proyectofinal.Cliente.funciones_cliente;
+import com.example.andres.proyectofinal.GPS.gps;
 import com.example.andres.proyectofinal.Login.Inicio;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +41,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Principal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,6 +50,9 @@ public class Principal extends AppCompatActivity
     DatabaseReference cliente_REFERENCE;
     Cliente cliente = new Cliente();
     ArrayList<Cliente> lCliente = new ArrayList<Cliente>();
+    private int MY_PERMISSIONS_REQUEST_READ_CONTACTS;
+    private FusedLocationProviderClient mFusedLocationClient;
+    DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +81,10 @@ public class Principal extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-
-
+        //gps
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        this.subirLatLong();
 
 
     }
@@ -111,9 +128,9 @@ public class Principal extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent(this, Camara.class));
+        } else if (id == R.id.nav_gps) {
+            startActivity(new Intent(this, gps.class));
         } else if (id == R.id.nav_logout) {
             desconectarUsuario();
         }
@@ -250,6 +267,28 @@ public class Principal extends AppCompatActivity
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+    }
+
+    private void subirLatLong() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(Principal.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+
+            return;
+        }
+        mFusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                // Got last known location. In some rare situations this can be null.
+                if (location != null) {
+                    Log.e("Latitud", +location.getLatitude() + "Longitud: " + location.getLongitude());
+                    Map<String, Object> latlang = new HashMap<>();
+                    latlang.put("Latitud", location.getLatitude());
+                    latlang.put("Longitud", location.getLongitude());
+                    mDatabase.child("informacion").push().setValue(latlang);
+                }
             }
         });
     }
